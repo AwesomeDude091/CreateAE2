@@ -1,0 +1,21 @@
+{
+  "type" : "create:deploying",
+  "ingredients": [
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "ae2:logic_processor_press",
+      "count": 1
+    }
+  ],
+  "results": [
+    {
+      "item": "ae2:logic_processor_press",
+      "count": 1
+    },
+    {
+      "item": "ae2:printed_logic_processor"
+    }
+  ]
+}

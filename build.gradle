@@ -21,9 +21,8 @@ version = "${mod_version}+${minecraft_version}" + (buildNumber != null ? "-${bui
 
 repositories {
 	maven { url = "https://maven.shedaniel.me/" } // Cloth Config, REI
-	maven { url = "https://dvs1.progwml6.com/files/maven/" } // JEI
-	maven { url = "https://maven.parchmentmc.org" } // Parchment mappings
 	maven { url = "https://maven.quiltmc.org/repository/release" } // Quilt Mappings
+	maven { url = "https://maven.parchmentmc.org" } // Parchment mappings
 	maven { url = "https://api.modrinth.com/maven" } // LazyDFU
 	maven { url = "https://maven.terraformersmc.com/releases/" } // Mod Menu
 	maven { url = "https://mvn.devos.one/snapshots/" } // Create, Porting Lib, Forge Tags, Milk Lib, Registrate
@@ -31,6 +30,15 @@ repositories {
 	maven { url = "https://maven.jamieswhiteshirt.com/libs-release" } // Reach Entity Attributes
 	maven { url = "https://jitpack.io/" } // Mixin Extras, Fabric ASM
 	maven { url = "https://maven.tterrag.com/" } // Flywheel
+	maven {
+		name "Modmaven"
+		url "https://modmaven.dev/"
+		// For Gradle 5.1 and above, limit it to just AE2
+		content {
+			includeGroup 'appeng'
+		}
+	} // AE2
+	// maven { url = "https://dvs1.progwml6.com/files/maven/" } // JEI
 }
 
 dependencies {
@@ -52,6 +60,12 @@ dependencies {
 	// Development QOL
 	modLocalRuntime("maven.modrinth:lazydfu:${lazydfu_version}")
 	modLocalRuntime("com.terraformersmc:modmenu:${modmenu_version}")
+	modLocalRuntime("appeng:appliedenergistics2-fabric:12.9.6")
+	modLocalRuntime("me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}")
+	modLocalRuntime 'dev.architectury:architectury-fabric:6.5.85'
+	// modLocalRuntime("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}")
+
+	modCompileOnly("appeng:appliedenergistics2-fabric:12.9.6:api")
 
 	// Recipe Viewers - Create Fabric supports JEI, REI, and EMI.
 	// See root gradle.properties to choose which to use at runtime.
@@ -99,9 +113,33 @@ java {
 	withSourcesJar()
 }
 
+loom {
+	runs {
+		datagenClient {
+			inherit client
+			name "Data Generation"
+			vmArg "-Dfabric-api.datagen"
+			vmArg "-Dfabric-api.datagen.outputdir=${file("src/main/generated")}"
+			vmArg "-Dfabric.api.datagen.modid=createae2"
+
+			runDir "build/datagen"
+		}
+	}
+}
+
 jar {
 	from("LICENSE") {
 		rename { "${it}_${project.archivesBaseName}" }
+	}
+}
+
+sourceSets {
+	main {
+		resources {
+			srcDirs += {
+				'src/main/generated'
+			}
+		}
 	}
 }
 

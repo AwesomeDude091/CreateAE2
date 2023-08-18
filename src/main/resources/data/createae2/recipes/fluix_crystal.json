@@ -1,0 +1,25 @@
+{
+  "type" : "create:mixing",
+  "ingredients": [
+    {
+      "item": "ae2:charged_certus_quartz_crystal"
+    },
+    {
+      "item": "minecraft:redstone"
+    },
+    {
+      "tag": "c:quartz"
+    },
+    {
+      "fluid": "minecraft:water",
+      "nbt": {},
+      "amount": 81000
+    }
+  ],
+  "results": [
+    {
+      "item": "ae2:fluix_crystal",
+      "count": 2
+    }
+  ]
+}

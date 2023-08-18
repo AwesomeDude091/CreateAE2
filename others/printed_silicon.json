@@ -1,0 +1,22 @@
+{
+  "type" : "create:deploying",
+  "ingredients": [
+    {
+      "item": "ae2:silicon"
+    },
+    {
+      "item": "ae2:silicon_press",
+      "count": 1
+    }
+  ],
+  "results": [
+    {
+      "item": "ae2:printed_silicon",
+      "count": 1
+    },
+    {
+      "item": "ae2:silicon_press",
+      "count": 1
+    }
+  ]
+}

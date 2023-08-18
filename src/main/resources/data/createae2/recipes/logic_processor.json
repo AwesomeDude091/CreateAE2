@@ -1,0 +1,49 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "ae2:printed_logic_processor"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "item": "ae2:logic_processor"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createae2:incomplete_logic_processor"
+        },
+        {
+          "item": "minecraft:redstone"
+        }
+      ],
+      "results": [
+        {
+          "item": "createae2:incomplete_logic_processor"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createae2:incomplete_logic_processor"
+        },
+        {
+          "item": "ae2:printed_silicon"
+        }
+      ],
+      "results": [
+        {
+          "item": "createae2:incomplete_logic_processor"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "createae2:incomplete_logic_processor"
+  }
+}
