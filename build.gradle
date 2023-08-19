@@ -52,7 +52,7 @@ dependencies {
 	modImplementation("net.fabricmc:fabric-loader:${fabric_loader_version}")
 
 	// dependencies
-	modImplementation("net.fabricmc.fabric-api:fabric-api:${fabric_api_version}")
+	modApi("net.fabricmc.fabric-api:fabric-api:${fabric_api_version}")
 
 	// Create - dependencies are added transitively
 	modImplementation("com.simibubi.create:create-fabric-${minecraft_version}:${create_version}")
