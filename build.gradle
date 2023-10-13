@@ -60,9 +60,9 @@ dependencies {
 	// Development QOL
 	modLocalRuntime("maven.modrinth:lazydfu:${lazydfu_version}")
 	modLocalRuntime("com.terraformersmc:modmenu:${modmenu_version}")
-	modLocalRuntime("appeng:appliedenergistics2-fabric:12.9.6")
+	modLocalRuntime("appeng:appliedenergistics2-fabric:${ae2_version}")
 	modLocalRuntime("me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}")
-	modLocalRuntime 'dev.architectury:architectury-fabric:6.5.85'
+	modLocalRuntime("dev.architectury:architectury-fabric:${architectury_version}")
 	// modLocalRuntime("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}")
 
 	modCompileOnly("appeng:appliedenergistics2-fabric:12.9.6:api")

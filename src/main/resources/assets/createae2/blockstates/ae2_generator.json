@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "createae2:block/ae2_generator/block",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "axis=y": {
+      "model": "createae2:block/ae2_generator/block",
+      "uvlock": true
+    },
+    "axis=z": {
+      "model": "createae2:block/ae2_generator/block",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    }
+  }
+}
