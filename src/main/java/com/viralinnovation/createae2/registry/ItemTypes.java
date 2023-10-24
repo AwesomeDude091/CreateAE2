@@ -9,17 +9,15 @@ public class ItemTypes {
 
 	public static final ItemEntry<Item> INCOMPLETE_ENGINEERING_PROCESSOR =
 			CreateAE2.REGISTRATE.item("incomplete_engineering_processor", Item::new)
-					.properties(p -> new Item.Properties())
 					.register();
 
 	public static final ItemEntry<Item> INCOMPLETE_CALCULATION_PROCESSOR =
 			CreateAE2.REGISTRATE.item("incomplete_calculation_processor", Item::new)
-					.properties(p -> new Item.Properties())
 					.register();
 
 	public static final ItemEntry<Item> INCOMPLETE_LOGIC_PROCESSOR =
-			CreateAE2.REGISTRATE.item("incomplete_logic_processor", Item::new)
-					.properties(p -> new Item.Properties())
+			CreateAE2.REGISTRATE
+					.item("incomplete_logic_processor", Item::new)
 					.register();
 
 	public static void register() {}

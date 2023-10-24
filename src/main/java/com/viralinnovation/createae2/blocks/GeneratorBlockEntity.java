@@ -1,10 +1,6 @@
 package com.viralinnovation.createae2.blocks;
 
-import java.util.List;
-
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
-import com.simibubi.create.foundation.advancement.AllAdvancements;
-import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
@@ -20,12 +16,6 @@ public class GeneratorBlockEntity extends KineticBlockEntity {
 	}
 
 	@Override
-	public void addBehaviours(List<BlockEntityBehaviour> behaviours) {
-		super.addBehaviours(behaviours);
-		registerAwardables(behaviours, AllAdvancements.ENCASED_FAN, AllAdvancements.FAN_PROCESSING);
-	}
-
-	@Override
 	protected void read(CompoundTag compound, boolean clientPacket) {
 		super.read(compound, clientPacket);
 	}
@@ -38,11 +28,6 @@ public class GeneratorBlockEntity extends KineticBlockEntity {
 	@Override
 	public void remove() {
 		super.remove();
-	}
-
-	@Override
-	public void onSpeedChanged(float prevSpeed) {
-		super.onSpeedChanged(prevSpeed);
 	}
 
 	@Override

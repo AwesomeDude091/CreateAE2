@@ -27,7 +27,7 @@ public class GeneratorRenderer extends KineticBlockEntityRenderer<GeneratorBlock
 
 	@Override
 	protected void renderSafe(GeneratorBlockEntity be, float partialTicks, PoseStack ms, MultiBufferSource buffer,
-		int light, int overlay) {
+							  int light, int overlay) {
 		if (Backend.canUseInstancing(be.getLevel())) return;
 
 		Direction direction = be.getBlockState()
