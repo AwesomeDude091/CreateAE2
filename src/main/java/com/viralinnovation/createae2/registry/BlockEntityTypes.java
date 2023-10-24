@@ -12,7 +12,7 @@ public class BlockEntityTypes {
 	public static final BlockEntityEntry<GeneratorBlockEntity> GENERATOR = CreateAE2.REGISTRATE
 			.blockEntity("ae2_generator", GeneratorBlockEntity::new)
 			.instance(() -> GeneratorInstance::new, false)
-			.validBlocks(AllBlocks.ENCASED_FAN)
+			.validBlocks(BlockTypes.Generator)
 			.renderer(() -> GeneratorRenderer::new)
 			.register();
 
