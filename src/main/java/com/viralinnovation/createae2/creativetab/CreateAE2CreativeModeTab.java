@@ -20,7 +20,7 @@ import net.minecraft.world.item.ItemStack;
 
 public class CreateAE2CreativeModeTab extends CreativeModeTab {
 	public CreateAE2CreativeModeTab(String id) {
-		super(13, CreateAE2.ID);
+		super(11, CreateAE2.ID);
 	}
 
 	@Override
